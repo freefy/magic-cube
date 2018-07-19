@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+.wrapper {
+    width:300px;
+    height:300px;
+    margin:200px auto;
+    position:relative;
+    border:1px solid blue;
+    perspective:600px;
+}
+.box {
+    width:200px;
+    height:200px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-100px;
+    margin-top:-100px;
+    transform-style:preserve-3d;
+    animation:turn 2s linear infinite;
+}
+.box:hover{
+    animation-play-state:paused;
+}
+.box .item{
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:0;
+    top:0;
+    opacity:0.5;
+    line-height:200px;
+    text-align:center;
+    font-size:30px;
+    color:#fff;    
+}
+.box .item:nth-of-type(0){
+    transform:translate3d(0,0,100px);
+    background-color:darkseagreen;
+}
+.box .item:nth-of-type(2){
+    transform:rotateY(90deg) translate3d(0,0,100px);
+    background-color:deeppink;
+}
+.box .item:nth-of-type(3){
+    transform:rotateY(-90deg) translate3d(0,0,100px);
+    background-color:blue
+}
+.box .item:nth-of-type(4){
+    transform:rotateY(180deg) translate3d(0,0,100px);
+    background-color:purple;
+}
+.box .item:nth-of-type(5){
+    transform:rotateX(90deg) translate3d(0,0,100px);
+    background-color:orangered;
+}
+.box .item:nth-of-type(6){
+    transform:rotateX(-90deg) translate3d(0,0,100px);
+    background-color:green;
+}
+@keyframes turn{
+    0%{
+        transform:rotate3d(0,0,0,0deg);
+    }
+    100%{
+        transform:rotate3d(1,1,1,360deg);
+    }
+}
